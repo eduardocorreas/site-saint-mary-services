@@ -10,7 +10,6 @@ import {
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
-import Image from "next/image";
 
 import logoIcon from "../public/logo-saint-mary-services-icon.png";
 import logo from "../public/logo-saint-mary-services.png";
@@ -46,11 +45,15 @@ const features = [
 ];
 
 export default function Home() {
+  const site = "https://www.stsmary.com";
+  const canonicalURL = site + useRouter().pathname;
+
   return (
     <>
       <Head>
         <title>Saint Mary Services</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={canonicalURL} />
       </Head>
       <header className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -75,7 +78,7 @@ export default function Home() {
                     <div className="flex items-center justify-between w-full md:w-auto">
                       <a href="#" className="mt-5">
                         <span className="sr-only">Saint Mary Services</span>
-                        <Image
+                        <img
                           src={logo}
                           width={70}
                           height={80}
@@ -119,15 +122,6 @@ export default function Home() {
                 >
                   <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="px-5 pt-4 flex items-center justify-between">
-                      <div>
-                        <Image
-                          className="h-8 w-auto"
-                          src={logoIcon}
-                          width={50}
-                          height={50}
-                          alt=""
-                        />
-                      </div>
                       <div className="-mr-2">
                         <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
                           <span className="sr-only">Close main menu</span>
@@ -186,7 +180,7 @@ export default function Home() {
           </div>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Image
+          <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
             src={deliverer}
             alt=""
@@ -235,7 +229,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="md:grid md:grid-cols-2 md:gap-x-10">
               <div>
-                <Image src={mobileImage} alt="Mobile Illustration" />
+                <img src={mobileImage} alt="Mobile Illustration" />
               </div>
               <div
                 style={{
@@ -247,7 +241,7 @@ export default function Home() {
               >
                 <div className="mb-20">
                   <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl my-auto">
-                    Where we delivery?
+                    Where we deliver?
                   </p>
                   <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
                     We deliver throughout the state of Nevada and some areas of
@@ -259,7 +253,7 @@ export default function Home() {
                   </p>
                   <div className="rounded-md mt-10">
                     <a
-                      href="#services"
+                      href="https://api.whatsapp.com/send?phone=16572620027"
                       className="w-full md:w-80 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-indigo-700 md:py-4 md:text-md md:px-10"
                     >
                       <FontAwesomeIcon
